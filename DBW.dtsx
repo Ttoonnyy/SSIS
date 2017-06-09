@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VW7CL01IT-016"
   DTS:CreatorName="CAIRNS\TGoodwin"
-  DTS:DTSID="{9F48AD3E-76D6-426A-B5D3-F9A40E576BD7}"
+  DTS:DTSID="{62EE7EC7-1A50-47AE-AE8D-6FF89CDE0B31}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.0500.272"
   DTS:LocaleID="3081"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="DBW"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{45AE72F8-A83A-4CF5-B09C-BAD6651FE1B1}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{E7CC036E-238A-46A8-87E9-0B3D6CD71D2B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

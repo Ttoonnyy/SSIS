@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VW7CL01IT-016"
   DTS:CreatorName="CAIRNS\TGoodwin"
-  DTS:DTSID="{68110D92-281F-49F9-A7CD-BA30D896878B}"
+  DTS:DTSID="{21A0FC0F-5F9C-46E4-9102-EB33F510996F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.0500.272"
   DTS:LocaleID="3081"
   DTS:ObjectName="input_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{D927C66F-5E64-4E11-BCDA-AE7ABCB36910}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{95333EEB-E253-47A8-9845-DB7E643EAAFD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox OLE DB Destination]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{44E3FFEA-7EA2-4C1A-A5FA-444FC402EE31}"
+      DTS:DTSID="{EB638D9C-FC06-40C7-ACE6-40EF788DA891}"
       DTS:ObjectName="SQLDEV2.TGoodwin_Sandbox OLE DB Destination">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -29,7 +29,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[swimming pools flat file source]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{0D90991B-0A7F-4D47-B05C-2BF1E9BFF1EB}"
+      DTS:DTSID="{953F107E-64A1-429E-A966-4214BB037EF7}"
       DTS:ObjectName="swimming pools flat file source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -49,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pool_name"
-              DTS:DTSID="{96F30C77-7F3F-46FC-A10A-59A24DE559CD}"
+              DTS:DTSID="{787B2725-6E96-4730-A6D6-26051FA5C1E2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="data_type"
-              DTS:DTSID="{3C53369D-29CB-4A7A-A5C0-EF308195D966}"
+              DTS:DTSID="{5DB3BC3F-2EC0-4311-AB04-3F3EDB7FE685}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pool_address"
-              DTS:DTSID="{C6E300DB-0E05-4964-B8C8-AF1F4A964EB6}"
+              DTS:DTSID="{75261FA9-2179-4689-80D4-60EB9909CB34}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="contact_ph"
-              DTS:DTSID="{00FF3E9E-0343-4402-9C9A-E605615D0821}"
+              DTS:DTSID="{42A36325-A361-4751-AB54-841C9D8244D4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +85,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="website"
-              DTS:DTSID="{5F0A52F6-A119-4825-B46E-B9B10D043170}"
+              DTS:DTSID="{7E1E9765-4AB0-4AAA-B993-4BA8D7D0F353}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +94,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_months"
-              DTS:DTSID="{018017DF-04C1-444D-A6BB-6EE9E40DF6CF}"
+              DTS:DTSID="{1D76AED3-F700-4F73-B38C-76BB36792D4F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +103,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_Monday"
-              DTS:DTSID="{E5AF4F40-5140-4092-957F-75D182D9E3A1}"
+              DTS:DTSID="{C8FCA694-875D-466E-99C4-A08247EBC834}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +112,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_tuesday"
-              DTS:DTSID="{08DFB8DE-F109-459A-A52C-E4067139AF7F}"
+              DTS:DTSID="{523BF83C-8186-43C7-B1F8-C76F49479AC8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +121,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_wednesday"
-              DTS:DTSID="{4FC5E30A-C90E-411F-AA31-6DBC7FD5959A}"
+              DTS:DTSID="{EED62597-202B-4D33-8F6C-2E7B6F2A5BEF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -130,7 +130,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_thursday"
-              DTS:DTSID="{9849030D-8355-405F-B840-4A9647546D42}"
+              DTS:DTSID="{403DE51D-AD7C-4AC6-B55D-AA28F1894ABD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -139,7 +139,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_friday"
-              DTS:DTSID="{E9512710-6C2A-43CE-8FE4-C721189A857F}"
+              DTS:DTSID="{B991CCC5-2262-45E2-8586-2262E0BC65B1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -148,7 +148,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_saturday"
-              DTS:DTSID="{532D2837-3542-4633-A52A-54E82EB82A95}"
+              DTS:DTSID="{2E7F4D6B-952A-44E0-A7C5-8F9268D3071A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +157,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_sunday"
-              DTS:DTSID="{320A24D1-670D-4ACB-BE20-8266DF442E00}"
+              DTS:DTSID="{003FB55D-1D8D-4959-8510-B4DEF10DB442}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="summer_public_holiday"
-              DTS:DTSID="{F5156AE9-657C-4ED0-982B-77F8DC574C7F}"
+              DTS:DTSID="{14819EE4-EB8E-455B-BA20-AEDBABA7432E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_months"
-              DTS:DTSID="{1ECFC4E8-8B1F-469F-BF5C-2A76230144F0}"
+              DTS:DTSID="{A366F0C5-4CA8-483B-B284-19FDB6281322}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_monday"
-              DTS:DTSID="{D0703B93-3183-406F-925E-BB91F674A98B}"
+              DTS:DTSID="{91A1B423-CA9A-4A65-864C-C245DF8F3C24}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_tuesday"
-              DTS:DTSID="{8EAB17EB-B60C-49EB-B69C-B19D55C40BBA}"
+              DTS:DTSID="{85513991-31CF-4C12-B2B7-5E992F86F369}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_wednesday"
-              DTS:DTSID="{3747288E-E59E-4BB0-97A1-17CEC0668D89}"
+              DTS:DTSID="{BD547BC0-4A38-487E-9DDD-1D1272021802}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_thursday"
-              DTS:DTSID="{1951D858-F577-4CED-B8F6-092D8F17CBD6}"
+              DTS:DTSID="{0E712DF0-6906-47C2-AD8D-D1BB2FD6971B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_friday"
-              DTS:DTSID="{1CB311DF-EA06-4972-A363-97C0525D6D59}"
+              DTS:DTSID="{8B84ABA1-08F1-4573-8990-62681A697AB1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +229,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_saturday"
-              DTS:DTSID="{174D5D52-F510-4E8A-8FA4-A040499A8D9B}"
+              DTS:DTSID="{597EF10D-B5E7-444C-B628-7E9E433395F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -238,7 +238,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_sunday"
-              DTS:DTSID="{CECBD8BF-8982-4361-8B60-5438EE90A448}"
+              DTS:DTSID="{619E16F5-4BE0-417E-AE3C-22FF16560789}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -247,7 +247,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="winter_public_holiday"
-              DTS:DTSID="{91F392AA-BACD-47FD-86CD-804B69404771}"
+              DTS:DTSID="{59C58547-082E-490A-B3D9-8B487EFABF21}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -256,7 +256,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="details"
-              DTS:DTSID="{0841CA08-08F7-4B77-A8CF-B6A93BFB39A8}"
+              DTS:DTSID="{17B75A42-0525-4E6C-B35C-0815E005DFFD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -269,7 +269,7 @@
       DTS:refId="Package\Swimming Pools Data Flow"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{0BAA3695-53BA-428E-8B49-F57B3532D779}"
+      DTS:DTSID="{4A8F1F12-87F9-4D26-861C-9AD5F09925B6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Swimming Pools Data Flow"
