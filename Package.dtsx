@@ -1,0 +1,3259 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/8/2017 11:19:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VW7CL01IT-016"
+  DTS:CreatorName="CAIRNS\TGoodwin"
+  DTS:DTSID="{6B301015-CEB9-43D0-A41E-4693550A7B9E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0500.272"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{550150B6-B780-4E1A-BC34-70A3FD8CF803}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5FE672D0-7451-4669-978E-4819A04E7871}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3081"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\isilonspe-smb\vdi\VDI_USER_DATA\TGoodwin\Documents\Visual Studio 2015\projects\Auditing Data\error.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pool_id"
+              DTS:DTSID="{CF73A6F5-9633-4833-BCA9-F39DC06498AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pool_name"
+              DTS:DTSID="{6051FF39-FE03-493F-814E-B74C6EA21155}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="data_type"
+              DTS:DTSID="{7E56EA0E-7AEC-45DC-9B07-98D66B4018A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pool_address"
+              DTS:DTSID="{F53C7442-947C-4380-ADA8-F5A8A28AD0DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contact_ph"
+              DTS:DTSID="{68CC47FD-6377-4082-8720-18EA2F6C0F0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="website"
+              DTS:DTSID="{133C0128-3929-4F72-8AC8-40BD06B07EAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_months"
+              DTS:DTSID="{8C00504B-1D11-412E-8835-290014771901}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_monday"
+              DTS:DTSID="{9D7DA954-0685-443D-B620-8248E998DD00}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_tuesday"
+              DTS:DTSID="{8A766602-B0FD-4427-AC78-ABA1DC6976AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_wednesday"
+              DTS:DTSID="{79305B9A-260D-498C-90D2-B53BEC8EFF6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_thursday"
+              DTS:DTSID="{E244E7D9-D2F0-4638-B6DC-270A8F33E82A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_friday"
+              DTS:DTSID="{BEE1454F-C8B3-419B-8F63-385F23AA2E93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_saturday"
+              DTS:DTSID="{4066F6FF-42D8-4C99-84E6-345C1E231314}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_sunday"
+              DTS:DTSID="{EBF82CF6-043E-4098-8B17-63BDE2DE181D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_public_holiday"
+              DTS:DTSID="{AC8F7EB2-261D-4552-BF28-07D3AEE12EA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_months"
+              DTS:DTSID="{A59878C0-0442-4162-ACCE-8855417AED4B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_monday"
+              DTS:DTSID="{4CE5D06C-DD4E-4209-9E8B-393F097D64AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_tuesday"
+              DTS:DTSID="{A35CC5CA-6881-4D7B-8BFC-A6A50F3407A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_wednesday"
+              DTS:DTSID="{167E6CB6-3C78-4973-9E11-699902C279CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_thursday"
+              DTS:DTSID="{077077C0-598B-4D1E-900C-7CE11EBA190B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_friday"
+              DTS:DTSID="{1FF66F62-1985-48D4-91EA-790D31E1C1F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_saturday"
+              DTS:DTSID="{5CE96D90-0D64-41EA-8CE8-477984F00824}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_sunday"
+              DTS:DTSID="{E6FD1B53-2D05-4283-941C-81C913A1D37C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_public_holiday"
+              DTS:DTSID="{9CF6E1C0-4A69-4DAF-9CA4-307131A65F3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="details"
+              DTS:DTSID="{28BE531B-9274-465A-822A-B494AF3ED037}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created_time"
+              DTS:DTSID="{20235C3B-4298-4D96-B84B-0818D9B35E99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{AFEBBCED-0485-4046-885E-0D9E5B0E41B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{2AF3BA95-4588-4640-999A-F5D0285657FD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{43ADFF42-4A2E-4C87-B830-979025B6301A}"
+      DTS:ObjectName="SQLDEV2.TGoodwin_Sandbox">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQLDEV2;Initial Catalog=TGoodwin_Sandbox;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5DB81D6F-7DE7-41EE-A6A6-DC0635E87087}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;INSERTED: &quot; +  (DT_STR,5,1252)@[User::rowsInserted] + &quot;, Updated:&quot; +  (DT_STR,5,1252)@[User::rowsUpdated]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="comment">
+      <DTS:VariableValue
+        DTS:DataType="8">INSERTED: 0, Updated:0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{49735662-B742-4A4F-9DC1-958919074A9B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowsInserted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81F209CA-8E32-43AF-A69E-09D7B809404A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowsUpdated">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\swimming_pools"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{43B3DC1E-BFC5-41B4-8269-A40B97928A13}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="swimming_pools"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\swimming_pools\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\swimming_pools\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\swimming_pools\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[created_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[created_time]"
+                      name="created_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[modified_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[modified_time]"
+                      name="modified_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\swimming_pools\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\swimming_pools\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\swimming_pools\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\swimming_pools\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="3081"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\swimming_pools\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[pool_id]"
+                      cachedDataType="i4"
+                      cachedName="pool_id"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pool_id]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_id]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[pool_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_name"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pool_name]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_name]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[data_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="data_type"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[data_type]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_type]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[pool_address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_address"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pool_address]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_address]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[contact_ph]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="contact_ph"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[contact_ph]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[website]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="website"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[website]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[website]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_months"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_months]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_months]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_monday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_monday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_tuesday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_tuesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_wednesday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_wednesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_thursday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_thursday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_friday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_friday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_saturday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_saturday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_sunday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_sunday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[summer_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_public_holiday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_public_holiday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_months"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_months]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_months]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_monday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_monday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_tuesday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_tuesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_wednesday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_wednesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_thursday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_thursday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_friday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_friday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_saturday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_saturday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_sunday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_sunday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[winter_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_public_holiday"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_public_holiday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[details]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="details"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[details]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[details]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[created_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created_time"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[created_time]"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[created_time]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pool_id]"
+                      dataType="i4"
+                      name="pool_id" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_name" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="data_type" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_address" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="contact_ph" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="website" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_months" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_monday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_friday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_months" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_monday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_friday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="details" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[created_time]"
+                      dataType="dbTimeStamp"
+                      name="created_time" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\swimming_pools\Insert into DBW where no exist"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert into DBW where no exist"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DBW]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\swimming_pools\Insert into DBW where no exist.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[pool_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_name"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[pool_name]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_name]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[data_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="data_type"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[data_type]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_type]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[pool_address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_address"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[pool_address]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_address]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[contact_ph]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="contact_ph"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[contact_ph]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[website]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="website"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[website]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[website]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_months"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_months]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_months]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_monday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_monday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_tuesday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_tuesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_wednesday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_wednesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_thursday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_thursday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_friday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_friday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_saturday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_saturday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_sunday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_sunday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[summer_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_public_holiday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_public_holiday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_months"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_months]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_months]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_monday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_monday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_tuesday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_tuesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_wednesday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_wednesday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_thursday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_thursday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_friday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_friday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_saturday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_saturday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_sunday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_sunday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[winter_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_public_holiday"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_public_holiday]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[pool_id]"
+                      cachedDataType="i4"
+                      cachedName="pool_id"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[pool_id]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_id]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[details]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="details"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[details]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[details]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[created_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created_time"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[created]"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[created_time]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].Columns[modified_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modified_time"
+                      externalMetadataColumnId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[modified]"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[modified_time]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[pool_id]"
+                      dataType="i4"
+                      name="pool_id" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_name" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="data_type" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_address" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="contact_ph" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="website" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_months" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_monday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_friday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_months" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_monday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_friday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="details" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[created]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="created" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input].ExternalColumns[modified]"
+                      dataType="dbTimeStamp"
+                      name="modified" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\swimming_pools\Lookup Existing"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Existing"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DBW]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DBW]) [refTable]
+where [refTable].[pool_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pool_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="pool_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="data_type" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="pool_address" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="contact_ph" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="website" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_months" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_monday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_tuesday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_wednesday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_thursday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_friday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_saturday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_sunday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="summer_public_holiday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_months" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_monday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_tuesday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_wednesday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_thursday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_friday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_saturday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_sunday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="winter_public_holiday" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="details" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="created" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="modified" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="user" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\swimming_pools\Lookup Existing.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\swimming_pools\Lookup Existing.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\swimming_pools\Lookup Existing.Inputs[Lookup Input].Columns[pool_id]"
+                      cachedDataType="i4"
+                      cachedName="pool_id"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">pool_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\swimming_pools\Lookup Existing.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Match Output].Columns[pool_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Match Output].Columns[pool_id]"
+                      name="pool_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">pool_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\swimming_pools\Lookup Existing.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\swimming_pools\Lookup Existing.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\swimming_pools\Lookup Existing.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\swimming_pools\New Rows"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="New Rows">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::rowsInserted</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\swimming_pools\New Rows.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\swimming_pools\New Rows.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\swimming_pools\New Rows.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\swimming_pools\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE DBW
+	SET
+	pool_name = ?,
+	data_type = ?,
+	pool_address = ?,
+	contact_ph = ?,
+	website = ?,
+	summer_months = ?,
+	summer_monday = ?,
+	summer_tuesday = ?,
+	summer_wednesday = ?,
+	summer_thursday = ?,
+	summer_friday = ?,
+	summer_saturday = ?,
+	summer_sunday = ?,
+	summer_public_holiday = ?,
+	winter_months = ?,
+	winter_monday = ?,
+	winter_tuesday = ?,
+	winter_wednesday = ?,
+	winter_thursday = ?,
+	winter_friday = ?,
+	winter_saturday = ?,
+	winter_sunday = ?,
+	winter_public_holiday = ?,
+	details = ?,
+                modified = ?
+Where pool_id = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\swimming_pools\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[pool_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_name"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_name]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[data_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="data_type"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_type]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[pool_address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_address"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_address]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[contact_ph]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="contact_ph"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[website]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="website"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[website]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_months"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_months]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_monday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_tuesday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_wednesday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_thursday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_friday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_saturday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_sunday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[summer_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_public_holiday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_months"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_months]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_monday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_tuesday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_wednesday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_thursday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_friday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_saturday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_sunday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[winter_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_public_holiday"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[details]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="details"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[details]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[pool_id]"
+                      cachedDataType="i4"
+                      cachedName="pool_id"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
+                      lineageId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Match Output].Columns[pool_id]" />
+                    <inputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].Columns[modified_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modified_time"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
+                      lineageId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output].Columns[modified_time]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_15">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_16">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_17">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_18">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_19">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_20">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_21">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_22">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_23">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
+                      dataType="dbTimeStamp"
+                      name="Param_24">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
+                      dataType="i4"
+                      name="Param_25">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\swimming_pools\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\swimming_pools\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\swimming_pools\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[swimming_pools]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\swimming_pools\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_id]"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_id]"
+                      name="pool_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_name]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_name]"
+                      name="pool_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_type]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_type]"
+                      name="data_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_address]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[pool_address]"
+                      name="pool_address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[contact_ph]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]"
+                      name="contact_ph"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[website]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[website]"
+                      name="website"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_months]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_months]"
+                      name="summer_months"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_monday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]"
+                      name="summer_monday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_tuesday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]"
+                      name="summer_tuesday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_wednesday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]"
+                      name="summer_wednesday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_thursday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]"
+                      name="summer_thursday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_friday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]"
+                      name="summer_friday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_saturday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]"
+                      name="summer_saturday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_sunday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]"
+                      name="summer_sunday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_public_holiday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]"
+                      name="summer_public_holiday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_months]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_months]"
+                      name="winter_months"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_monday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]"
+                      name="winter_monday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_tuesday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]"
+                      name="winter_tuesday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_wednesday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]"
+                      name="winter_wednesday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_thursday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]"
+                      name="winter_thursday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_friday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]"
+                      name="winter_friday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_saturday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]"
+                      name="winter_saturday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_sunday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]"
+                      name="winter_sunday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_public_holiday]"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]"
+                      name="winter_public_holiday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[details]"
+                      length="100"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].Columns[details]"
+                      name="details"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_id]"
+                      dataType="i4"
+                      name="pool_id" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_name" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="data_type" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_address" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="contact_ph" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="website" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_months" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_monday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_friday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_months" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_monday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_friday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="details" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pool_id]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pool_id]"
+                      name="pool_id" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pool_name]"
+                      name="pool_name" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_type]"
+                      name="data_type" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pool_address]"
+                      name="pool_address" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[contact_ph]"
+                      name="contact_ph" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[website]"
+                      name="website" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_months]"
+                      name="summer_months" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_monday]"
+                      name="summer_monday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_tuesday]"
+                      name="summer_tuesday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_wednesday]"
+                      name="summer_wednesday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_thursday]"
+                      name="summer_thursday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_friday]"
+                      name="summer_friday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_saturday]"
+                      name="summer_saturday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_sunday]"
+                      name="summer_sunday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summer_public_holiday]"
+                      name="summer_public_holiday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_months]"
+                      name="winter_months" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_monday]"
+                      name="winter_monday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_tuesday]"
+                      name="winter_tuesday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_wednesday]"
+                      name="winter_wednesday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_thursday]"
+                      name="winter_thursday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_friday]"
+                      name="winter_friday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_saturday]"
+                      name="winter_saturday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_sunday]"
+                      name="winter_sunday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[winter_public_holiday]"
+                      name="winter_public_holiday" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[details]"
+                      name="details" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\swimming_pools\Updated Rows"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Updated Rows">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::rowsUpdated</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\swimming_pools\Updated Rows.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\swimming_pools\Updated Rows.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\swimming_pools\Updated Rows.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\swimming_pools.Paths[Derived Column Output]"
+              endId="Package\swimming_pools\Lookup Existing.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\swimming_pools\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\swimming_pools.Paths[Lookup Match Output]"
+              endId="Package\swimming_pools\New Rows.Inputs[Row Count Input 1]"
+              name="Lookup Match Output"
+              startId="Package\swimming_pools\Lookup Existing.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\swimming_pools.Paths[Lookup No Match Output]"
+              endId="Package\swimming_pools\Updated Rows.Inputs[Row Count Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\swimming_pools\Lookup Existing.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\swimming_pools.Paths[OLE DB Destination Error Output]"
+              endId="Package\swimming_pools\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Destination Error Output"
+              startId="Package\swimming_pools\Insert into DBW where no exist.Outputs[OLE DB Destination Error Output]" />
+            <path
+              refId="Package\swimming_pools.Paths[OLE DB Source Output]"
+              endId="Package\swimming_pools\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\swimming_pools\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\swimming_pools.Paths[Row Count Output 1]"
+              endId="Package\swimming_pools\Insert into DBW where no exist.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\swimming_pools\Updated Rows.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\swimming_pools.Paths[Row Count Output 11]"
+              endId="Package\swimming_pools\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\swimming_pools\New Rows.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\swimming_pools"
+          TopLeft="296,102" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\swimming_pools">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\swimming_pools\New Rows"
+          TopLeft="290,258" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\swimming_pools\Flat File Destination"
+          TopLeft="731,431" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\swimming_pools\Lookup Existing"
+          TopLeft="463,174" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\swimming_pools\OLE DB Source"
+          TopLeft="142,23" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\swimming_pools\Updated Rows"
+          TopLeft="650,269" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\swimming_pools\Insert into DBW where no exist"
+          TopLeft="541,341" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\swimming_pools\OLE DB Command"
+          TopLeft="326,340" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\swimming_pools\Derived Column"
+          TopLeft="333,98" />
+        <EdgeLayout
+          Id="Package\swimming_pools.Paths[Row Count Output 11]"
+          TopLeft="356.5,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57,40"
+              Start="0,0"
+              End="57,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="4,20" />
+                  <mssgle:LineSegment
+                    End="53,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53,20"
+                    Point2="57,20"
+                    Point3="57,24" />
+                  <mssgle:LineSegment
+                    End="57,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\swimming_pools.Paths[Row Count Output 1]"
+          TopLeft="726.5,311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70,30"
+              Start="0,0"
+              End="-70,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="-4,15" />
+                  <mssgle:LineSegment
+                    End="-66,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66,15"
+                    Point2="-70,15"
+                    Point3="-70,19" />
+                  <mssgle:LineSegment
+                    End="-70,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\swimming_pools.Paths[OLE DB Source Output]"
+          TopLeft="221.5,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="191.5,33"
+              Start="0,0"
+              End="191.5,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
+                  <mssgle:LineSegment
+                    End="187.5,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="187.5,16.5"
+                    Point2="191.5,16.5"
+                    Point3="191.5,20.5" />
+                  <mssgle:LineSegment
+                    End="191.5,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\swimming_pools.Paths[OLE DB Destination Error Output]"
+          TopLeft="656.5,383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163.5,48"
+              Start="0,0"
+              End="163.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="159.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="159.5,24"
+                    Point2="163.5,24"
+                    Point3="163.5,28" />
+                  <mssgle:LineSegment
+                    End="163.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.54109375,29,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\swimming_pools.Paths[Lookup No Match Output]"
+          TopLeft="567.666666666667,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158.833333333333,53"
+              Start="0,0"
+              End="158.833333333333,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5168119551681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5168119551681"
+                    Point2="0,21.5168119551681"
+                    Point3="4,21.5168119551681" />
+                  <mssgle:LineSegment
+                    End="154.833333333333,21.5168119551681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="154.833333333333,21.5168119551681"
+                    Point2="158.833333333333,21.5168119551681"
+                    Point3="158.833333333333,25.5168119551681" />
+                  <mssgle:LineSegment
+                    End="158.833333333333,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="23.6102799479167,26.5168119551681,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\swimming_pools.Paths[Lookup Match Output]"
+          TopLeft="517.333333333333,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-160.833333333333,42"
+              Start="0,0"
+              End="-160.833333333333,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0510585305106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0510585305106"
+                    Point2="0,17.0510585305106"
+                    Point3="-4,17.0510585305106" />
+                  <mssgle:LineSegment
+                    End="-156.833333333333,17.0510585305106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-156.833333333333,17.0510585305106"
+                    Point2="-160.833333333333,17.0510585305106"
+                    Point3="-160.833333333333,21.0510585305106" />
+                  <mssgle:LineSegment
+                    End="-160.833333333333,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-128.608053385417,22.0510585305106,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\swimming_pools.Paths[Derived Column Output]"
+          TopLeft="413,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.5,34"
+              Start="0,0"
+              End="129.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="4,17" />
+                  <mssgle:LineSegment
+                    End="125.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.5,17"
+                    Point2="129.5,17"
+                    Point3="129.5,21" />
+                  <mssgle:LineSegment
+                    End="129.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\swimming_pools\Lookup Existing">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DBW]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\swimming_pools\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\swimming_pools\Insert into DBW where no exist">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

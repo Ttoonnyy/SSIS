@@ -1,0 +1,2711 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/8/2013 8:30:08 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AUTHDEV"
+  DTS:CreatorName="CAIRNS\SSylvest"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{488BB92C-89AB-4B94-A268-D3C3249EEED9}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0500.272"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="load_transaction_source"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{8B5BB6DC-7120-433C-8051-E00A280E6297}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}"
+      DTS:ObjectName="DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=MIPROD;Initial Catalog=cisods;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-lgcy_loadsupplier-{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}AUTHDEV.cisods1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Oracle]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E166F1DF-8BDD-496C-A958-34D3C6884FEB}"
+      DTS:ObjectName="Oracle">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=FPRD;User ID=bobuser;Provider=OraOLEDB.Oracle.1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ssisconfig]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1F44AC35-96D7-49B8-A90F-FACE2CF08FF4}"
+      DTS:ObjectName="ssisconfig">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=MIPROD;Initial Catalog=cisods;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-Package-{1F44AC35-96D7-49B8-A90F-FACE2CF08FF4}AUTHDEV.cisods;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[swimming_pools]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FCCC2AB4-8ED2-4902-BCD0-C5B61CC2B04B}"
+      DTS:ObjectName="swimming_pools">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQLDEV2;Initial Catalog=TGoodwin_Sandbox;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="E:\SSIS\ssisconfigdb.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{7BE8E2FF-6DF7-4A22-A7DD-EEBB3DF20CA8}"
+      DTS:ObjectName="ssisconfig" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ssisconfig&quot;;&quot;[dbo].[SSISconfig]&quot;;&quot;connstrDWH&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{168AA74D-C309-40CB-9946-6AC6E0F7E1CC}"
+      DTS:ObjectName="connstrDWH" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ssisconfig&quot;;&quot;[dbo].[SSISconfig]&quot;;&quot;connstrOracle&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{74780FF9-DFDA-408E-8A4B-FDADC492E427}"
+      DTS:ObjectName="connstrOracle" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ssisconfig&quot;;&quot;[dbo].[SSISconfig]&quot;;&quot;connstrLgcyAuthority&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{E10A0413-133D-4663-B68B-BBC7B562241D}"
+      DTS:ObjectName="connstrAuthority" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ssisconfig&quot;;&quot;[dbo].[SSISconfig]&quot;;&quot;GL_IncrementalOverride&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{26B7375A-5DEC-4555-902F-341B5528F1FE}"
+      DTS:ObjectName="gvIncrementalOverride" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5C0B2975-27C1-465D-BDE4-93FF82404562}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvAuthorityDataSourceID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27B18CB3-DE3D-458A-A6C1-570D3736B275}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Inserted: &quot;+ (DT_STR,10,1252) @[User::gvRowsIns] + &quot;, To staging for update: &quot; +  (DT_STR,10,1252) @[User::gvRowsUpd]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvComment">
+      <DTS:VariableValue
+        DTS:DataType="8">Inserted: 0, To staging for update: 0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E53CBF5C-7068-444A-8568-A25F43ED0DC4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvFromDate">
+      <DTS:VariableValue
+        DTS:DataType="8">1999-01-01 12:00:00</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{47BEB07B-463D-4FEA-AB3F-DFC9D103FD2D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvIncrementalOverride">
+      <DTS:VariableValue
+        DTS:DataType="8">no</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C815F646-A4FB-475A-8047-8B847E977D77}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvJobID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{04A7C38E-846D-44D6-A2B9-B67125C1C0AD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvOracleDataSourceID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1F65DABE-1419-4EEA-8D62-4415B973F800}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::PackageName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvPackageName">
+      <DTS:VariableValue
+        DTS:DataType="8">load_transaction_source</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ED40F60C-762F-4CA0-8B8D-E191CAD395CE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvRowsIns">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{59A67014-2484-4E88-8CBD-D8127E42C137}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvRowsUpd">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A1B42D04-AE4F-4303-8EAA-AE9CAECF2EEA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;select unistr(JE_SOURCE_NAME) as code, unistr(USER_JE_SOURCE_NAME) as dsc&#xA;from GL.GL_JE_SOURCES_TL where  LAST_UPDATE_DATE &gt;= TO_DATE('&quot;+ SUBSTRING(  @[User::gvFromDate] ,1,19) + &quot;','yyyy-mm-dd hh24:mi:ss') and LAST_UPDATE_DATE &lt;= TO_DATE('&quot;+ SUBSTRING(  @[User::gvToDate] ,1,19) + &quot;','yyyy-mm-dd hh24:mi:ss')&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvSQL_Oracle">
+      <DTS:VariableValue
+        DTS:DataType="8">select unistr(JE_SOURCE_NAME) as code, unistr(USER_JE_SOURCE_NAME) as dsc
+from GL.GL_JE_SOURCES_TL where  LAST_UPDATE_DATE &gt;= TO_DATE('1999-01-01 12:00:00','yyyy-mm-dd hh24:mi:ss') and LAST_UPDATE_DATE &lt;= TO_DATE('','yyyy-mm-dd hh24:mi:ss')</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{500CD27E-D1D7-477D-A2B6-728A901BD1A7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="gvToDate">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">18,7,OnError,19,OnExecStatusChanged,13,OnInformation,25,OnPipelinePostEndOfRowset,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,24,OnPipelinePrePrimeOutput,18,OnPipelineRowsSent,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,22,OnVariableValueChanged,9,OnWarning,10,Diagnostic</DTS:Property>
+    <DTS:Property
+      DTS:EventName="Diagnostic"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnExecStatusChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnQueryCancel"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnVariableValueChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\get Authority data source id"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{00A77C69-357F-4FD7-A53B-85F70394419A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get Authority data source id"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}"
+          SQLTask:SqlStatementSource="select data_source_id from data_source where data_source_description = 'Authority'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::gvAuthorityDataSourceID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Date Params"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="IF gvIncrementalOverride set to yes then use parameters passed in, else retrieve delta date values to use"
+      DTS:DTSID="{e6d27476-d80f-4693-8a56-829c0e8978df}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Date Params"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1F44AC35-96D7-49B8-A90F-FACE2CF08FF4}"
+          SQLTask:SqlStatementSource="select &#xA;Case When ? = 'Yes' Then ?&#xA; Else IsNull(convert(varchar(19),MAX(to_dtm),121),'1990-01-01') &#xA; End as FromDate,&#xA;Case When ? = 'Yes' And Ltrim(Rtrim(? ))&lt;&gt;''and CONVERT(datetime,?) &lt;= getdate() Then ?&#xA; Else CONVERT(varchar(19), getdate(), 121)&#xA; End as ToDate&#xA;From job_audit&#xA;Where job_type = 'SSIS'&#xA;and job_name = ?&#xA;and job_status = 'Completed'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::gvFromDate" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="1"
+            SQLTask:DtsVariableName="User::gvToDate" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::gvIncrementalOverride"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::gvFromDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::gvIncrementalOverride"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::gvToDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::gvPackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::gvToDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::gvToDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\get Oracle data source id"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{cf43e1d9-92ed-44e8-bc92-fa211b7506b0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get Oracle data source id"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}"
+          SQLTask:SqlStatementSource="select data_source_id from data_source where data_source_description = 'Oracle Financials'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::gvOracleDataSourceID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\insJobAudit"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BDDB5C36-8883-4C9B-9C7E-9DF3DF0AF049}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="insJobAudit"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}"
+          SQLTask:SqlStatementSource="exec p_JobAuditIns 'SSIS',?,?,?,? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::gvPackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::gvFromDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::gvToDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::gvJobID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Oracle"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{c0771053-385a-4c0d-82aa-90f888fef2ad}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Oracle"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\Oracle\check group"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="check group"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Oracle\check group.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oracle\check group.Inputs[Derived Column Input].Columns[lu_transaction_source_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="lu_transaction_source_group"
+                      lineageId="Package\Oracle\Lookup group.Outputs[Lookup Match Output].Columns[lu_transaction_source_group]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\check group.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Oracle\check group.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\check group.Outputs[Derived Column Output].Columns[transaction_source_group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Oracle\check group.Outputs[Derived Column Output].Columns[transaction_source_group]"
+                      name="transaction_source_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)([ISNULL](#{Package\Oracle\Lookup group.Outputs[Lookup Match Output].Columns[lu_transaction_source_group]}) ? "Unknown" : #{Package\Oracle\Lookup group.Outputs[Lookup Match Output].Columns[lu_transaction_source_group]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)(ISNULL(lu_transaction_source_group) ? "Unknown" : lu_transaction_source_group)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oracle\check group.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Oracle\check group.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\check group.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\check group.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oracle\check group.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\check group.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\CountRowsInserted"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts the rows in a dataset."
+              name="CountRowsInserted">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::gvRowsIns</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Oracle\CountRowsInserted.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\CountRowsInserted.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Oracle\CountRowsInserted.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\CountRowsUpdated"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts the rows in a dataset."
+              name="CountRowsUpdated">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::gvRowsUpd</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Oracle\CountRowsUpdated.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\CountRowsUpdated.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Oracle\CountRowsUpdated.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Oracle\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oracle\Derived Column.Inputs[Derived Column Input].Columns[CODE]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="CODE"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[CODE]" />
+                    <inputColumn
+                      refId="Package\Oracle\Derived Column.Inputs[Derived Column Input].Columns[DSC]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="DSC"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[DSC]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Oracle\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[createdttm]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[createdttm]"
+                      name="createdttm"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[moddttm]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[moddttm]"
+                      name="moddttm"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[modby]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[modby]"
+                      name="modby"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,30,1252)@[System::UserName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,30,1252)@[System::UserName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="25"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]"
+                      name="source_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,25,1252)#{Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[CODE]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,25,1252)CODE</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_desc]"
+                      name="source_desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,255,1252)#{Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[DSC]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,255,1252)DSC</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[data_source_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[data_source_id]"
+                      name="data_source_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::gvOracleDataSourceID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::gvOracleDataSourceID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oracle\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Oracle\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oracle\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\Insert where not exists"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert where not exists"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[transaction_source]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oracle\Insert where not exists.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].Columns[createdttm]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdttm"
+                      externalMetadataColumnId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[created_dtm]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[createdttm]" />
+                    <inputColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].Columns[moddttm]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="moddttm"
+                      externalMetadataColumnId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[mod_dtm]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[moddttm]" />
+                    <inputColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].Columns[modby]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="modby"
+                      externalMetadataColumnId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[mod_by]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[modby]" />
+                    <inputColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].Columns[source_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="source_code"
+                      externalMetadataColumnId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[transaction_source_code]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]" />
+                    <inputColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].Columns[source_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="source_desc"
+                      externalMetadataColumnId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_desc]" />
+                    <inputColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].Columns[transaction_source_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction_source_group"
+                      externalMetadataColumnId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[transaction_source_group]"
+                      lineageId="Package\Oracle\check group.Outputs[Derived Column Output].Columns[transaction_source_group]" />
+                    <inputColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].Columns[data_source_id]"
+                      cachedDataType="i4"
+                      cachedName="data_source_id"
+                      externalMetadataColumnId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[data_source_id]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[data_source_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[created_dtm]"
+                      dataType="dbTimeStamp"
+                      name="created_dtm" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[mod_dtm]"
+                      dataType="dbTimeStamp"
+                      name="mod_dtm" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[mod_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="mod_by" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[transaction_source_id]"
+                      dataType="i4"
+                      name="transaction_source_id" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[transaction_source_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="transaction_source_code" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="description" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[transaction_source_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="transaction_source_group" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input].ExternalColumns[data_source_id]"
+                      dataType="i4"
+                      name="data_source_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\Insert where not exists.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Insert where not exists.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Insert where not exists.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oracle\Insert where not exists.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Insert where not exists.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\Lookup existing"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Lookup existing"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[transaction_source]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[transaction_source]) [refTable]
+where [refTable].[transaction_source_code] = ? and [refTable].[data_source_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="transaction_source_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="transaction_source_code" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="description" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="created_dtm" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="mod_dtm" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="mod_by" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="transaction_source_group" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="data_source_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]};#{Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[data_source_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oracle\Lookup existing.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Oracle\Lookup existing.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oracle\Lookup existing.Inputs[Lookup Input].Columns[source_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="source_code"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">transaction_source_code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Oracle\Lookup existing.Inputs[Lookup Input].Columns[data_source_id]"
+                      cachedDataType="i4"
+                      cachedName="data_source_id"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[data_source_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">data_source_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\Lookup existing.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Oracle\Lookup existing.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Lookup existing.Outputs[Lookup Match Output].Columns[transaction_source_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Oracle\Lookup existing.Outputs[Lookup Match Output].Columns[transaction_source_id]"
+                      name="transaction_source_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">transaction_source_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oracle\Lookup existing.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Oracle\Lookup existing.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oracle\Lookup existing.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Oracle\Lookup existing.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Lookup existing.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Lookup existing.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oracle\Lookup existing.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Lookup existing.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\Lookup group"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Lookup group"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from param_config where param_group = 'GL_TrnSrc_Group' and param_name2 = 'Oracle Financials'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from param_config where param_group = 'GL_TrnSrc_Group') [refTable]
+where [refTable].[param_name1] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="param_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="param_group" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="param_name1" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="param_name2" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="param_type" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="char_value" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="num_value" dataType="DT_NUMERIC" length="0" precision="20" scale="4" codePage="0"/&gt;&lt;referenceColumn name="date_value" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oracle\Lookup group.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ssisconfig]"
+                  connectionManagerRefId="Package.ConnectionManagers[ssisconfig]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Oracle\Lookup group.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oracle\Lookup group.Inputs[Lookup Input].Columns[source_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="source_code"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">param_name1</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\Lookup group.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Oracle\Lookup group.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Lookup group.Outputs[Lookup Match Output].Columns[lu_transaction_source_group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Oracle\Lookup group.Outputs[Lookup Match Output].Columns[lu_transaction_source_group]"
+                      name="lu_transaction_source_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">char_value</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oracle\Lookup group.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Oracle\Lookup group.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oracle\Lookup group.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Oracle\Lookup group.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Lookup group.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Lookup group.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oracle\Lookup group.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Lookup group.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\Oracle Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Oracle Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">"GL"."GL_SETS_OF_BOOKS"</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select JE_SOURCE_NAME as code, USER_JE_SOURCE_NAME as dsc
+from GL.GL_JE_SOURCES_TL</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::gvSQL_Oracle</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oracle\Oracle Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Oracle]"
+                  connectionManagerRefId="Package.ConnectionManagers[Oracle]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[CODE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      length="25"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[CODE]"
+                      name="CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[DSC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].ExternalColumns[DSC]"
+                      length="25"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].Columns[DSC]"
+                      name="DSC"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      dataType="wstr"
+                      length="25"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output].ExternalColumns[DSC]"
+                      dataType="wstr"
+                      length="25"
+                      name="DSC" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      name="CODE" />
+                    <outputColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[DSC]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[DSC]"
+                      name="DSC" />
+                    <outputColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oracle\Update where exists"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Executes an SQL command for each row in a dataset."
+              name="Update where exists"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Update transaction_source
+set transaction_source_code = ?,
+description = ?,
+transaction_source_group = ?,
+mod_dtm = ?, 
+mod_by = ?
+where transaction_source_id = ?
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oracle\Update where exists.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].Columns[source_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="source_code"
+                      externalMetadataColumnId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_code]" />
+                    <inputColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].Columns[source_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="source_desc"
+                      externalMetadataColumnId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[source_desc]" />
+                    <inputColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].Columns[transaction_source_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction_source_group"
+                      externalMetadataColumnId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Oracle\check group.Outputs[Derived Column Output].Columns[transaction_source_group]" />
+                    <inputColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].Columns[moddttm]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="moddttm"
+                      externalMetadataColumnId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[moddttm]" />
+                    <inputColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].Columns[modby]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="modby"
+                      externalMetadataColumnId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Oracle\Derived Column.Outputs[Derived Column Output].Columns[modby]" />
+                    <inputColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].Columns[transaction_source_id]"
+                      cachedDataType="i4"
+                      cachedName="transaction_source_id"
+                      externalMetadataColumnId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Oracle\Lookup existing.Outputs[Lookup Match Output].Columns[transaction_source_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbTimeStamp"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oracle\Update where exists.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oracle\Update where exists.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oracle\Update where exists.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Update where exists.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oracle\Update where exists.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oracle\Update where exists.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Oracle.Paths[Derived Column Output]"
+              endId="Package\Oracle\Lookup group.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Oracle\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Oracle.Paths[Derived Column Output1]"
+              endId="Package\Oracle\Lookup existing.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Oracle\check group.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Oracle.Paths[Lookup Match Output]"
+              endId="Package\Oracle\CountRowsUpdated.Inputs[Row Count Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Oracle\Lookup existing.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Oracle.Paths[Lookup Match Output1]"
+              endId="Package\Oracle\check group.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Oracle\Lookup group.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Oracle.Paths[Lookup No Match Output]"
+              endId="Package\Oracle\CountRowsInserted.Inputs[Row Count Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\Oracle\Lookup existing.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Oracle.Paths[OLE DB Source Output]"
+              endId="Package\Oracle\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Oracle\Oracle Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Oracle.Paths[Row Count Output 1]"
+              endId="Package\Oracle\Insert where not exists.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Oracle\CountRowsInserted.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Oracle.Paths[Row Count Output 11]"
+              endId="Package\Oracle\Update where exists.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Oracle\CountRowsUpdated.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\set up unknown record if not exists"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3402556d-9fe1-43eb-ad45-db314d513cae}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="set up unknown record if not exists"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}"
+          SQLTask:SqlStatementSource="Insert transaction_source (data_source_id, transaction_source_code,description, transaction_source_group, created_dtm, mod_dtm, mod_by)&#xA;Select  ds.data_source_id, 'Unknown','Unknown', 'Unknown',  getdate(), getdate(), SUSER_NAME() &#xA;from data_source ds&#xA;where ds.data_source_description = 'Unknown'&#xA;and not exists(select 1 from transaction_source where data_source_id = ds.data_source_id and transaction_source_code  = 'Unknown')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\updJobAudit Success"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a14de911-29fd-40ea-a927-d4189e2fc486}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="updJobAudit Success"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}"
+          SQLTask:SqlStatementSource="Exec p_jobauditupd ?,'Completed',?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::gvJobID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::gvComment"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\updJobAuditFailure"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{28d7a805-dde2-4b9a-ae5f-293fcc4853d3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="updJobAuditFailure"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3DB40171-2F5E-4EF6-B0ED-9A79BDB499A9}"
+          SQLTask:SqlStatementSource="Exec p_jobauditupd ?,'Failure',?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::gvJobID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::gvComment"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D2574629-9F10-413C-BA37-7F64F4A16A05}"
+      DTS:From="Package\set up unknown record if not exists"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\get Authority data source id" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{504BA74E-064A-41E6-BD58-DFDA75281337}"
+      DTS:From="Package\insJobAudit"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\set up unknown record if not exists" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{0768D843-F3CC-4ED8-B980-BB658F9AB9D2}"
+      DTS:From="Package\set up unknown record if not exists"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\updJobAuditFailure"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{948EE09C-BD7D-4240-89BF-9522D780E6B9}"
+      DTS:From="Package\Oracle"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\updJobAuditFailure"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{88A4C2B7-6F5C-4469-A25A-DF875935094D}"
+      DTS:From="Package\Oracle"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\updJobAudit Success" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D8350D84-BBED-4E7D-A18A-CFC185502D2A}"
+      DTS:From="Package\Get Date Params"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\insJobAudit" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{C49CC11C-8E07-4CD5-B490-E38491CFAA14}"
+      DTS:From="Package\get Authority data source id"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\get Oracle data source id" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{50599950-F942-4394-AE70-0EB84B1EA850}"
+      DTS:From="Package\get Oracle data source id"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Oracle" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\get Authority data source id"
+          TopLeft="625.688679245283,7.83962264150944" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Get Date Params"
+          TopLeft="5.5,8.21698113207547" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\get Oracle data source id"
+          TopLeft="811.235849056604,5.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\insJobAudit"
+          TopLeft="205.27358490566,7.68867924528302" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Oracle"
+          TopLeft="578.594339622641,146.254716981132" />
+        <NodeLayout
+          Size="152,44"
+          Id="Package\set up unknown record if not exists"
+          TopLeft="420.330188679245,6.66981132075472" />
+        <NodeLayout
+          Size="217,44"
+          Id="Package\updJobAudit Success"
+          TopLeft="435.783018867925,387.896226415094" />
+        <NodeLayout
+          Size="205,44"
+          Id="Package\updJobAuditFailure"
+          TopLeft="83.5188679245283,289.160377358491" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="572.066037735849,28.6320754716981">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.6226415094339,1.16981132075472"
+              Start="0,0"
+              End="46.1226415094339,1.16981132075472">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.7924528301887,0" />
+                  <mssgle:LineSegment
+                    End="26.7924528301887,1.16981132075472" />
+                  <mssgle:LineSegment
+                    End="46.1226415094339,1.16981132075472" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="341.047169811321,29.6509433962264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.2830188679245,-1.0188679245283"
+              Start="0,0"
+              End="71.7830188679245,-1.0188679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="39.6226415094339,0" />
+                  <mssgle:LineSegment
+                    End="39.6226415094339,-1.0188679245283" />
+                  <mssgle:LineSegment
+                    End="71.7830188679245,-1.0188679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="496.330188679245,50.6698113207547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-343.14465408805,238.490566037736"
+              Start="0,0"
+              End="-343.14465408805,230.990566037736">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,137.986154998265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,137.986154998265"
+                    Point2="0,141.986154998265"
+                    Point3="-4,141.986154998265" />
+                  <mssgle:LineSegment
+                    End="-339.14465408805,141.986154998265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-339.14465408805,141.986154998265"
+                    Point2="-343.14465408805,141.986154998265"
+                    Point3="-343.14465408805,145.986154998265" />
+                  <mssgle:LineSegment
+                    End="-343.14465408805,230.990566037736" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-186.813674700275,146.986154998265,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="625.261006289308,190.254716981132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-406.408805031446,98.9056603773585"
+              Start="0,0"
+              End="-406.408805031446,91.4056603773585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.6917662073767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.6917662073767"
+                    Point2="0,49.6917662073767"
+                    Point3="-4,49.6917662073767" />
+                  <mssgle:LineSegment
+                    End="-402.408805031446,49.6917662073767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-402.408805031446,49.6917662073767"
+                    Point2="-406.408805031446,49.6917662073767"
+                    Point3="-406.408805031446,53.6917662073767" />
+                  <mssgle:LineSegment
+                    End="-406.408805031446,91.4056603773585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-218.445750171973,54.6917662073767,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="667.927672955975,190.254716981132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-123.64465408805,197.641509433962"
+              Start="0,0"
+              End="-123.64465408805,190.141509433962">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.4354980254497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76.4354980254497"
+                    Point2="0,80.4354980254497"
+                    Point3="-4,80.4354980254497" />
+                  <mssgle:LineSegment
+                    End="-119.64465408805,80.4354980254497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-119.64465408805,80.4354980254497"
+                    Point2="-123.64465408805,80.4354980254497"
+                    Point3="-123.64465408805,84.4354980254497" />
+                  <mssgle:LineSegment
+                    End="-123.64465408805,190.141509433962" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="141.27358490566,30.1792452830189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64,-0.528301886792454"
+              Start="0,0"
+              End="56.5,-0.528301886792454">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32,0" />
+                  <mssgle:LineSegment
+                    End="32,-0.528301886792454" />
+                  <mssgle:LineSegment
+                    End="56.5,-0.528301886792454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="761.462264150943,29.8018867924528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.7735849056604,-2.33962264150943"
+              Start="0,0"
+              End="42.2735849056604,-2.33962264150943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.8679245283018,0" />
+                  <mssgle:LineSegment
+                    End="24.8679245283018,-2.33962264150943" />
+                  <mssgle:LineSegment
+                    End="42.2735849056604,-2.33962264150943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="879.122641509434,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-232.641509433962,96.8301886792453"
+              Start="0,0"
+              End="-232.641509433962,89.3301886792453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-232.641509433962,48.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-232.641509433962,89.3301886792453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Oracle">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Oracle\CountRowsUpdated"
+          TopLeft="715.858490566038,352.103773584906" />
+        <NodeLayout
+          Size="234,44"
+          Id="Package\Oracle\Insert where not exists"
+          TopLeft="396.122641509434,441.764150943396" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Oracle\Oracle Source"
+          TopLeft="18.5,18.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Oracle\Lookup existing"
+          TopLeft="567.858490566038,225.122641509434" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Oracle\CountRowsInserted"
+          TopLeft="434.27358490566,345.084905660377" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Oracle\Lookup group"
+          TopLeft="252.311320754717,104.990566037736" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Oracle\Derived Column"
+          TopLeft="254.877358490566,21.5188679245283" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Oracle\check group"
+          TopLeft="249.330188679245,187.820754716981" />
+        <NodeLayout
+          Size="293,44"
+          Id="Package\Oracle\Update where exists"
+          TopLeft="744.820754716981,472.896226415094" />
+        <EdgeLayout
+          Id="Package\Oracle.Paths[Row Count Output 1]"
+          TopLeft="502.27358490566,389.084905660377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.8490566037736,52.6792452830189"
+              Start="0,0"
+              End="10.8490566037736,45.1792452830189">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.3396226415095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.3396226415095"
+                    Point2="0,26.3396226415095"
+                    Point3="4,26.3396226415095" />
+                  <mssgle:LineSegment
+                    End="6.84905660377365,26.3396226415095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.84905660377365,26.3396226415095"
+                    Point2="10.8490566037736,26.3396226415095"
+                    Point3="10.8490566037736,30.3396226415095" />
+                  <mssgle:LineSegment
+                    End="10.8490566037736,45.1792452830189" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oracle.Paths[OLE DB Source Output]"
+          TopLeft="154.5,41.5094339622642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.377358490566,0"
+              Start="0,0"
+              End="92.877358490566,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="92.877358490566,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oracle.Paths[Lookup No Match Output]"
+          TopLeft="635.745283018868,269.047169811321">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-133.584905660377,76.0377358490566"
+              Start="0,0"
+              End="-133.584905660377,68.5377358490566">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="-4,38" />
+                  <mssgle:LineSegment
+                    End="-129.584905660377,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-129.584905660377,38"
+                    Point2="-133.584905660377,38"
+                    Point3="-133.584905660377,42" />
+                  <mssgle:LineSegment
+                    End="-133.584905660377,68.5377358490566" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.598839548938,43,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oracle.Paths[Lookup Match Output1]"
+          TopLeft="326.311320754717,146.990566037736">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.98113207547203,40.8301886792451"
+              Start="0,0"
+              End="-8.98113207547203,33.3301886792451">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4150943396226" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4150943396226"
+                    Point2="0,20.4150943396226"
+                    Point3="-4,20.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-4.98113207547203,20.4150943396226" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.98113207547203,20.4150943396226"
+                    Point2="-8.98113207547203,20.4150943396226"
+                    Point3="-8.98113207547203,24.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-8.98113207547203,33.3301886792451" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-52.681952756486,25.4150943396226,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oracle.Paths[Lookup Match Output]"
+          TopLeft="656.5,269.047169811321">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.245283018868,83.0566037735849"
+              Start="0,0"
+              End="127.245283018868,75.5566037735849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5094339622642" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5094339622642"
+                    Point2="0,41.5094339622642"
+                    Point3="4,41.5094339622642" />
+                  <mssgle:LineSegment
+                    End="123.245283018868,41.5094339622642" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.245283018868,41.5094339622642"
+                    Point2="127.245283018868,41.5094339622642"
+                    Point3="127.245283018868,45.5094339622642" />
+                  <mssgle:LineSegment
+                    End="127.245283018868,75.5566037735849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="15.431254790684,46.5094339622642,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oracle.Paths[Derived Column Output1]"
+          TopLeft="385.330188679245,209.820754716981">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182.528301886793,37.301886792453"
+              Start="0,0"
+              End="175.028301886793,37.301886792453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="87.2641509433965,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="87.2641509433965,0"
+                    Point2="91.2641509433965,0"
+                    Point3="91.2641509433965,4" />
+                  <mssgle:LineSegment
+                    End="91.2641509433965,33.301886792453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.2641509433965,33.301886792453"
+                    Point2="91.2641509433965,37.301886792453"
+                    Point3="95.2641509433965,37.301886792453" />
+                  <mssgle:LineSegment
+                    End="175.028301886793,37.301886792453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oracle.Paths[Derived Column Output]"
+          TopLeft="334.877358490566,63.5188679245283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.56603773584897,41.4716981132076"
+              Start="0,0"
+              End="-8.56603773584897,33.9716981132076">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7358490566038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7358490566038"
+                    Point2="0,20.7358490566038"
+                    Point3="-4,20.7358490566038" />
+                  <mssgle:LineSegment
+                    End="-4.56603773584897,20.7358490566038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.56603773584897,20.7358490566038"
+                    Point2="-8.56603773584897,20.7358490566038"
+                    Point3="-8.56603773584897,24.7358490566038" />
+                  <mssgle:LineSegment
+                    End="-8.56603773584897,33.9716981132076" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oracle.Paths[Row Count Output 11]"
+          TopLeft="783.858490566038,396.103773584906">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.462264150943,76.7924528301886"
+              Start="0,0"
+              End="107.462264150943,69.2924528301886">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.3962264150943" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.3962264150943"
+                    Point2="0,38.3962264150943"
+                    Point3="4,38.3962264150943" />
+                  <mssgle:LineSegment
+                    End="103.462264150943,38.3962264150943" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.462264150943,38.3962264150943"
+                    Point2="107.462264150943,38.3962264150943"
+                    Point3="107.462264150943,42.3962264150943" />
+                  <mssgle:LineSegment
+                    End="107.462264150943,69.2924528301886" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

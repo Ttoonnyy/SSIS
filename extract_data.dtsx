@@ -1,0 +1,1802 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/31/2017 1:31:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VW7CL01IT-016"
+  DTS:CreatorName="CAIRNS\TGoodwin"
+  DTS:DTSID="{8A6625C6-BBFD-4AEA-BF8B-89FD1E2D833E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0500.272"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="extract_data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{54846CFB-BAB4-4C21-8385-A5CDF38E5FAB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV FF connection manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{ADBAD932-3C5C-4C3E-A3CC-210579369FE3}"
+      DTS:ObjectName="CSV FF connection manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3081"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="P:\Users\TGoodwin\Desktop\DataSets\swimming_pools_exctract.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pool_name"
+              DTS:DTSID="{6D64D6BA-394E-4ECB-B3A6-0231B44842F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="data_type"
+              DTS:DTSID="{B5BE85AE-CA2D-4476-BB73-512BFCE900DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pool_address"
+              DTS:DTSID="{0FA5661E-F536-460E-BA03-4B7E0A479210}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contact_ph"
+              DTS:DTSID="{95683071-2C7F-4E8E-97DB-EB26D2684894}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="website"
+              DTS:DTSID="{2C16CA90-F173-42B0-AF5E-F6DAB0A6B37D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_months"
+              DTS:DTSID="{31A3BCA9-2CD6-4584-A42B-254B20B6223E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_monday"
+              DTS:DTSID="{130B377C-B202-4C00-8EE1-FA1483A85248}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_tuesday"
+              DTS:DTSID="{D0460946-5F80-4C15-85EB-4F63AB32CFC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_wednesday"
+              DTS:DTSID="{20AD5DD9-375A-4A3B-8B4D-9885A2A78349}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_thursday"
+              DTS:DTSID="{CE59DA36-200C-401A-B707-9C42BF9E8E95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_friday"
+              DTS:DTSID="{1F83FB47-C255-4996-9529-8DD7682E6399}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_saturday"
+              DTS:DTSID="{894FE354-BA6E-499A-B892-9342F683DF16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_sunday"
+              DTS:DTSID="{88F2B4FF-198E-4336-A2D8-CF9293AAD333}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summer_public_holiday"
+              DTS:DTSID="{DA0F21D7-D49C-4E44-819A-287105097027}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_months"
+              DTS:DTSID="{4667948C-1508-4508-9533-BC5E1E96507C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_monday"
+              DTS:DTSID="{65066E7D-6015-4FA5-B28A-4A7B2E8EF92E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_tuesday"
+              DTS:DTSID="{B9213595-54AE-46E9-B82D-3A268923C099}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_wednesday"
+              DTS:DTSID="{2311B2D7-21CE-4FBA-9FCA-57FB799E37A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_thursday"
+              DTS:DTSID="{9D0889B4-144B-46E6-8EC7-DEFF03D1BDE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_friday"
+              DTS:DTSID="{FD92440F-AC0E-4169-92A9-D060F8152631}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_saturday"
+              DTS:DTSID="{4593D63E-1E21-482B-B89A-289E158B705F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_sunday"
+              DTS:DTSID="{ADCFF56A-0538-4DB8-93E3-277C259DDFEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="winter_public_holiday"
+              DTS:DTSID="{9E47FC9E-F6B9-4168-9B4D-12EBAD5ACCBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="details"
+              DTS:DTSID="{4476878B-8851-470E-8B0B-0A0BA9EB1075}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JSON FF connection manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E82D3FC1-81D1-4E77-9015-CD293FC6C458}"
+      DTS:ObjectName="JSON FF connection manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3081"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="P:\Users\TGoodwin\Desktop\DataSets\swimming_pools_extract.json">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{E1096C2B-6D58-4364-9769-CB21B6CFBDB5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FAD30E1D-C140-4F13-A789-269172CA4F10}"
+      DTS:ObjectName="SQLDEV2.TGoodwin_Sandbox">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQLDEV2;Initial Catalog=TGoodwin_Sandbox;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1207EE99-7D34-4F93-BCC3-1CE2BD5C4C4B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]"
+                      cachedDataType="nText"
+                      cachedName="JSON_F52E2B61-18A1-11d1-B105-00805F49916B"
+                      lineageId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output].Columns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Json_string]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Json_string]"
+                      name="Json_string"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output].Columns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[swimming_pools]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[pool_name]"
+                      name="pool_name"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_type]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[data_type]"
+                      name="data_type"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_address]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[pool_address]"
+                      name="pool_address"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[contact_ph]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]"
+                      name="contact_ph"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[website]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[website]"
+                      name="website"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_months]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_months]"
+                      name="summer_months"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_monday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]"
+                      name="summer_monday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_tuesday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]"
+                      name="summer_tuesday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_wednesday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]"
+                      name="summer_wednesday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_thursday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]"
+                      name="summer_thursday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_friday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]"
+                      name="summer_friday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_saturday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]"
+                      name="summer_saturday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_sunday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]"
+                      name="summer_sunday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_public_holiday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]"
+                      name="summer_public_holiday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_months]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_months]"
+                      name="winter_months"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_monday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]"
+                      name="winter_monday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_tuesday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]"
+                      name="winter_tuesday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_wednesday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]"
+                      name="winter_wednesday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_thursday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]"
+                      name="winter_thursday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_friday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]"
+                      name="winter_friday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_saturday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]"
+                      name="winter_saturday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_sunday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]"
+                      name="winter_sunday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_public_holiday]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]"
+                      name="winter_public_holiday"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[details]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[details]"
+                      name="details"
+                      truncationRowDisposition="IgnoreFailure" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_id]"
+                      dataType="i4"
+                      name="pool_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="data_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="contact_ph" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="website" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_months" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_monday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_friday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_months" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_monday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_friday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].ExternalColumns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="details" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[pool_name]"
+                      name="pool_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[data_type]"
+                      name="data_type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[pool_address]"
+                      name="pool_address" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[contact_ph]"
+                      name="contact_ph" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[website]"
+                      name="website" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_months]"
+                      name="summer_months" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_monday]"
+                      name="summer_monday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_tuesday]"
+                      name="summer_tuesday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_wednesday]"
+                      name="summer_wednesday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_thursday]"
+                      name="summer_thursday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_friday]"
+                      name="summer_friday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_saturday]"
+                      name="summer_saturday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_sunday]"
+                      name="summer_sunday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[summer_public_holiday]"
+                      name="summer_public_holiday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_months]"
+                      name="winter_months" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_monday]"
+                      name="winter_monday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_tuesday]"
+                      name="winter_tuesday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_wednesday]"
+                      name="winter_wednesday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_thursday]"
+                      name="winter_thursday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_friday]"
+                      name="winter_friday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_saturday]"
+                      name="winter_saturday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_sunday]"
+                      name="winter_sunday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[winter_public_holiday]"
+                      name="winter_public_holiday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[details]"
+                      name="details" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DB Soure"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB Soure"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[swimming_pools]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 	pool_name,
+	data_type,
+	pool_address,
+	contact_ph,
+	website,
+	summer_months,
+	summer_monday,
+	summer_tuesday,
+	summer_wednesday,
+	summer_thursday,
+	summer_friday,
+	summer_saturday,
+	summer_sunday,
+	summer_public_holiday,
+	winter_months,
+	winter_monday,
+	winter_tuesday,
+	winter_wednesday,
+	winter_thursday,
+	winter_friday,
+	winter_saturday,
+	winter_sunday,
+	winter_public_holiday,
+	details
+    from  swimming_pools 
+      FOR JSON AUTO</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\DB Soure.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLDEV2.TGoodwin_Sandbox]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output].Columns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output].ExternalColumns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]"
+                      lineageId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output].Columns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]"
+                      name="JSON_F52E2B61-18A1-11d1-B105-00805F49916B"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output].ExternalColumns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]"
+                      dataType="nText"
+                      name="JSON_F52E2B61-18A1-11d1-B105-00805F49916B" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Error Output].Columns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Error Output].Columns[JSON_F52E2B61-18A1-11d1-B105-00805F49916B]"
+                      name="JSON_F52E2B61-18A1-11d1-B105-00805F49916B" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Export as CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="3081"
+              name="Export as CSV">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Export as CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV FF connection manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV FF connection manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[pool_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[pool_name]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[pool_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[data_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="data_type"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[data_type]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[data_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[pool_address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pool_address"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[pool_address]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[pool_address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[contact_ph]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="contact_ph"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[contact_ph]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[contact_ph]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[website]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="website"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[website]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[website]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_months"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_months]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_months]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_monday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_monday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_monday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_tuesday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_tuesday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_tuesday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_wednesday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_wednesday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_wednesday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_thursday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_thursday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_thursday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_friday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_friday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_friday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_saturday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_saturday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_saturday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_sunday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_sunday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_sunday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[summer_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="summer_public_holiday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_public_holiday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[summer_public_holiday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_months]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_months"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_months]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_months]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_monday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_monday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_monday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_monday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_tuesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_tuesday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_tuesday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_tuesday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_wednesday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_wednesday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_wednesday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_wednesday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_thursday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_thursday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_thursday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_thursday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_friday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_friday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_friday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_friday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_saturday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_saturday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_saturday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_saturday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_sunday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_sunday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_sunday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_sunday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[winter_public_holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="winter_public_holiday"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_public_holiday]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[winter_public_holiday]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].Columns[details]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="details"
+                      externalMetadataColumnId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[details]"
+                      lineageId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output].Columns[details]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[pool_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[data_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="data_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[pool_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pool_address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[contact_ph]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="contact_ph" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="website" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_months" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_monday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_friday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[summer_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="summer_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_months]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_months" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_monday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_monday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_tuesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_tuesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_wednesday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_wednesday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_thursday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_thursday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_friday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_friday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_saturday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_saturday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_sunday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_sunday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[winter_public_holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="winter_public_holiday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input].ExternalColumns[details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="details" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Extract as JSON"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="3081"
+              name="Extract as JSON">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header">Swimming Pools</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Extract as JSON.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JSON FF connection manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[JSON FF connection manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Extract as JSON.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Extract as JSON.Inputs[Flat File Destination Input].Columns[Json_string]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Json_string"
+                      externalMetadataColumnId="Package\Data Flow Task\Extract as JSON.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Json_string]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Extract as JSON.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Column 0" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\Extract as JSON.Inputs[Flat File Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\DB Soure.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\Export as CSV.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Task"
+          TopLeft="422,140" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task\Export as CSV"
+          TopLeft="277,261" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Data Flow Task\DB Soure"
+          TopLeft="565,60" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Data Flow Task\DB Source"
+          TopLeft="365,57" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="590,166" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Data Flow Task\Extract as JSON"
+          TopLeft="612,292" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="432,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-78.5,162"
+              Start="0,0"
+              End="-78.5,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,77"
+                    Point2="0,81"
+                    Point3="-4,81" />
+                  <mssgle:LineSegment
+                    End="-74.5,81" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-74.5,81"
+                    Point2="-78.5,81"
+                    Point3="-78.5,85" />
+                  <mssgle:LineSegment
+                    End="-78.5,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="629.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42,64"
+              Start="0,0"
+              End="42,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="38,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38,32"
+                    Point2="42,32"
+                    Point3="42,36" />
+                  <mssgle:LineSegment
+                    End="42,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="671.5,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.5,84"
+              Start="0,0"
+              End="21.5,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="4,42" />
+                  <mssgle:LineSegment
+                    End="17.5,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.5,42"
+                    Point2="21.5,42"
+                    Point3="21.5,46" />
+                  <mssgle:LineSegment
+                    End="21.5,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DB Soure">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

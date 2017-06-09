@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Auditing Data", "Auditing Data.dtproj", "{C3A0267C-F0FB-42ED-A9A1-2250EB1F5791}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6FC11EAE-F34C-46BE-A88E-A018BC84A938}"
+	ProjectSection(SolutionItems) = preProject
+		load_transaction_source.dtsx = load_transaction_source.dtsx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3A0267C-F0FB-42ED-A9A1-2250EB1F5791}.Development|Default.ActiveCfg = Development
+		{C3A0267C-F0FB-42ED-A9A1-2250EB1F5791}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
